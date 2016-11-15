@@ -5,7 +5,7 @@
   * Tee Documents kansioon uusi kansio 'WebPerusteet'
   * Avaa terminaali (cmd + välilyönti, kirjoita terminal)
   * Mene kansioon 'WebPerusteet' `cd Documents/WebPerusteet`
-  * Lataa tämä repo `git clone https://github.com/ilkkamtk/WebPer.git`
+  * Lataa tämä repo `git clone https://github.com/ilkkamtk/WebPer1.git`
 
 ## Elementtien valitseminen ja muokkaaminen sekä tapahtumat
   * avaa esimerkki.html
