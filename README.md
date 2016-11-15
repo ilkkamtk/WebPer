@@ -57,4 +57,6 @@
   * Validointi suoritetaan JavaScriptillä vain, jos selain on Safari (tämä siksi että Safari ei tue HTML5 validointia)
     * `Modernizr.formvalidation`
 
+## Palautus
+1. Kopioi tämä kansio (WebPer1) kotihakemistoosi ja palauta Tuubiin linkki.
 
