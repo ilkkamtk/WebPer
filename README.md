@@ -35,7 +35,7 @@
   * Sähköpostiosoitteen on oltava oikeaa muotoa ja se on pakollinen
   * Puhelinnumeron on oltava muotoa +358401234567
   * Osoite ja postinumero eivät ole pakollisia, mutta postinumeron on oltava tasan 5 numeroa
-  * Salasana pitää olla peitetty
+  * Salasana pitää olla peitetty ja se on pakollinen
   * Apuja
     * http://www.the-art-of-web.com/html/html5-form-validation/
     * http://www.w3schools.com/TAgs/att_input_pattern.asp
@@ -46,7 +46,8 @@
 ### Tehtävä B 
 1. Avaa teht_b.html editorissa
 2. Kopioi tehtävä A:ssa tekemäsi lomake
-3. Tee lomakkeen validointi JavaScriptin avulla
+3. Lisää form-elementtiin novalidate attribuutti (HTML5 validointi pois päältä)
+4. Tee lomakkeen validointi JavaScriptin avulla
   * Tarkistetaan samat ominaisuudet, kuin tehtävässä A
     * `var elementti = document.querySelector()`
     * `var elementit = document.querySelectorAll()`
@@ -54,9 +55,7 @@
     * `elementti.setAttribute('style', 'cssOminaisuus: arvo;')`
   * Jos tarkistus ei mene läpi, lomakkeen lähettäminen estetään
     * `preventDefault()`
-  * Validointi suoritetaan JavaScriptillä vain, jos selain on Safari (tämä siksi että Safari ei tue HTML5 validointia)
-    * `Modernizr.formvalidation`
-
+    
 ## Palautus
 1. Kopioi tämä kansio (WebPer1) kotihakemistoosi ja palauta Tuubiin linkki.
 
