@@ -43,7 +43,7 @@
     * https://regex101.com/
   * Tee myös CSS mikäli aikaa riittää (Muokkaa css-kansion main.css -tiedostoa)
 
-### Tehtävä B 
+### Tehtävä B
 1. Avaa teht_b.html editorissa
 2. Kopioi tehtävä A:ssa tekemäsi lomake
 3. Lisää form-elementtiin novalidate attribuutti (HTML5 validointi pois päältä)
