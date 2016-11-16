@@ -35,7 +35,7 @@
   * Sähköpostiosoitteen on oltava oikeaa muotoa ja se on pakollinen
   * Puhelinnumeron on oltava muotoa +358401234567
   * Osoite ja postinumero eivät ole pakollisia, mutta postinumeron on oltava tasan 5 numeroa
-  * Salasana pitää olla peitetty
+  * Salasana pitää olla peitetty ja se on pakollinen
   * Apuja
     * http://www.the-art-of-web.com/html/html5-form-validation/
     * http://www.w3schools.com/TAgs/att_input_pattern.asp
