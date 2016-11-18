@@ -6,9 +6,11 @@ var lomake = document.querySelector('form');
 var validoi = function (evt) {
     // resetoidaan kenttien värit:
     // valitse kaikki input elementit
+    var kentat = document.querySelectorAll('input');
     // silmukan sisällä poista style-attribuutti
-    // removeAttribute()
-
+    for(var k = 0; k < kentat.length; k++){
+    	kentat[k].removeAttribute('style');
+	}
     // valitse kentät joissa on required-attribuutti
     var rKentat = document.querySelectorAll('input[required]');
     // käy kentät läpi for-silmukalla
