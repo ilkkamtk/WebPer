@@ -20,19 +20,19 @@
 
     <form>
         <label>Etunimi
-            <input type="text" name="etunimi">
+            <input type="text" name="etunimi" required>
         </label>
         <br>
         <label>Sukunimi
-            <input type="text" name="sukunimi">
+            <input type="text" name="sukunimi" required>
         </label>
         <br>
         <label>Sähköposti
-            <input type="email" name="sahkoposti">
+            <input type="email" name="sahkoposti" required>
         </label>
         <br>
         <label>Puhelinnumero
-            <input type="text" name="puhelin" pattern="" placeholder="esim: +358501234567">
+            <input type="text" name="puhelin" pattern="^\+[0-9]{11,20}$" placeholder="esim: +358501234567" required>
         </label>
         <br>
         <label>Osoite
@@ -40,11 +40,11 @@
         </label>
         <br>
         <label>Postinumero
-            <input type="text" name="postinumero" pattern="">
+            <input type="text" name="postinumero" pattern="^[0-9]{5}$">
         </label>
         <br>
         <label>Salasana
-            <input type="password">
+            <input type="password" required>
         </label>
         <br>
         <label>Etunimi
