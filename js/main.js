@@ -1,43 +1,77 @@
-/*jshint browser: true*/
-//var lomakkeet = document.querySelectorAll('form');
+'use strict';
+/*
+// harjoittelu -----------------
+const testi = document.querySelector('#testi');
+// console.log(testi);
+testi.innerHTML = 'Klikkaa tästä';
 
-var lomake = document.querySelector('form');
-
-var validoi = function (evt) {
-    // resetoidaan kenttien värit:
-    // valitse kaikki input elementit
-    var kentat = document.querySelectorAll('input');
-    // silmukan sisällä poista style-attribuutti
-    for(var k = 0; k < kentat.length; k++){
-    	kentat[k].removeAttribute('style');
-	}
-    // valitse kentät joissa on required-attribuutti
-    var rKentat = document.querySelectorAll('input[required]');
-    // käy kentät läpi for-silmukalla
-    for (var i = 0; i < rKentat.length; i++) {
-        // jos kentän value-attribuutti on tyhjä
-        if (rKentat[i].value.length === 0) {
-            evt.preventDefault();
-            // lisää kentän ympärille punainen border
-            rKentat[i].style.border = '1px red solid';
-        }
-    }
-
-    // valitse kentät joissa on pattern-attribuutti
-    var pKentat = document.querySelectorAll('input[pattern]');
-    // käy kentät läpi for-silmukalla
-    for (var j = 0; j < pKentat.length; j++) {
-        // hae pattern-attribuutin arvo ja tee siitä säännöllinen lauseke
-        var pattern = new RegExp(pKentat[j].pattern);
-        console.log(pattern);
-        // exec()-funktiolla voi testata säännöllisiä lausekkeita
-        // jos kentän value ei ole patternin mukainen
-        if (pattern.exec(pKentat[j].value) === null) {
-            evt.preventDefault();
-            // lisää kentän ympärille punainen border
-            pKentat[j].style.border = '1px red solid';
-        }
-    }
+const piilotaElementti = (evt) => {
+  console.log(evt);
+  evt.target.setAttribute('class', 'hidden');
 };
 
-lomake.addEventListener('submit', validoi);
+testi.addEventListener('click', piilotaElementti);
+
+const esimKappaleet = document.querySelectorAll('.esim');
+console.log(esimKappaleet);
+
+esimKappaleet[0].innerHTML = 'Eka kappale';
+esimKappaleet[1].innerHTML = 'Toka kappale';
+// ----------------------------------
+*/
+
+// teht B
+let lomakeOK = '';
+
+const checkAttribute = (attr, elements, func) => {
+  elements.forEach((el) => {
+    if (el.hasAttribute(attr)) {
+      func(el);
+    }
+  });
+};
+
+const checkEmpty = (el) => {
+  // console.log(el.value);
+  if(el.value === '') {
+    // el.style = 'border: 1px solid red';
+    el.setAttribute('style', 'border: 1px solid red');
+    lomakeOK += '0';
+  } else {
+    el.setAttribute('style', '');
+    lomakeOK += '1';
+  }
+};
+
+const checkPattern = (el) => {
+  // vanhemmissa selaimissa attribuutit haetaan getAttributella
+  // console.log(el.getAttribute('pattern'));
+  // uudemmissa attribuutin nimellä
+  // console.log(el.pattern);
+  const pat = el.getAttribute('pattern');
+  const lauseke = new RegExp(pat, 'i');
+  if (!lauseke.exec(el.value)){
+    el.setAttribute('style', 'border: 1px solid yellow');
+    lomakeOK += '0';
+  } else {
+    el.setAttribute('style', '');
+    lomakeOK += '1';
+  }
+};
+
+const inputElementit = document.querySelectorAll('input');
+
+
+const lomake = document.querySelector('form');
+
+lomake.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    lomakeOK = '';
+    checkAttribute('required', inputElementit, checkEmpty);
+    checkAttribute('pattern', inputElementit, checkPattern);
+    // tarkastetaan onko nollia
+    const lauseke = new RegExp('0');
+    if (!lauseke.exec(lomakeOK)){
+      lomake.submit();
+    }
+});

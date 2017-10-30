@@ -15,44 +15,40 @@
     </head>
     <body>
         <h1>Lomakkeen validointi JavaScript</h1>
-        
-        <form novalidate>
-        <label>Etunimi
-            <input type="text" name="etunimi" required>
-        </label>
-        <br>
-        <label>Sukunimi
-            <input type="text" name="sukunimi" required>
-        </label>
-        <br>
-        <label>Sähköposti
-            <input type="email" name="sahkoposti" required>
-        </label>
-        <br>
-        <label>Puhelinnumero
-            <input type="text" name="puhelin" pattern="^\+[0-9]{11,20}$" placeholder="esim: +358501234567" required>
-        </label>
-        <br>
-        <label>Osoite
-            <input type="text" name="osoite">
-        </label>
-        <br>
-        <label>Postinumero
-            <input type="text" name="postinumero" pattern="^[0-9]{5}$">
-        </label>
-        <br>
-        <label>Salasana
-            <input type="password" required>
-        </label>
-        <br>
-        <label>Etunimi
-        <input type="submit" value="lähetä">
-        </label>
-        <br>
-    </form>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <form action="lomakePOST.php" method="post" novalidate>
+            <label>Etunimi
+                <input type="text" name="etunimi" required>
+            </label>
+            <br>
+            <label>Sukunimi
+                <input type="text" name="sukunimi" required>
+            </label>
+            <br>
+            <label>Sähköposti
+                <input type="email" name="sahkoposti" required pattern="^[A-Z0-9_\+-]+(\.[A-Z0-9_\+-]+)*@[A-Z0-9_-]+(\.[A-Z0-9_-]+)*\.[A-Z]{2,}$">
+            </label>
+            <br>
+            <label>Puhelinnumero
+                <input type="tel" name="puhelin" placeholder="esim: +358501234567" pattern="^\+[0-9]*$">
+            </label>
+            <br>
+            <label>Osoite
+                <input type="text" name="osoite">
+            </label>
+            <br>
+            <label>Postinumero
+                <input type="text" name="postinumero" pattern="^[0-9]{5}$">
+            </label>
+            <br>
+            <label>Salasana
+                <input type="password" name="salasana" required>
+            </label>
+            <br>
+            <input type="submit" value="lähetä">
+            <br>
+        </form>
+
 
         <script src="js/main.js"></script>
     </body>
